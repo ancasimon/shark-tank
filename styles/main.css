@@ -1,3 +1,7 @@
 body {
     background-color: seagreen;
 }
+
+.person-card {
+    margin: 15px;
+}
