@@ -35,4 +35,24 @@ const persons = [
     return persons.filter((x) => x.isDead === true);
   };
 
-  export default { getAlivePersons, getDeadPersons };
+// we create an array of alive people
+// then we pick a random index out of that array of living
+// then we create an id out of that id of that random index
+// then we use findIndex to find that person with that index and kill them
+//that findIndex method gives us where the perosn we just randomly picked is in the main array
+//and then you change the status to dead.
+
+  const randomMurder = () => {
+    console.log('somone died');
+    const alivePeople = getAlivePersons();
+    //pick someone random
+    //and then change the boolean isDead to true
+    //use the index to find the person to murder!!! not the id!
+    const randomNum = Math.floor(Math.random() * alivePeople.length);
+    const deadPersonsId = alivePeople[randomNum].id;
+    console.log(randomNum);
+    const deadMan = persons.findIndex((x) => x.id === deadPersonsId);
+    persons[deadMan].isDead = true;
+  };
+
+  export default { getAlivePersons, getDeadPersons, randomMurder };
