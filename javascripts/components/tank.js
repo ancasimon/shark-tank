@@ -22,11 +22,13 @@ const tankBuilder = () => {
     const persons = personData.getAlivePersons();
     let domString = '';
     domString += '<div class="card">';
-    domString += `<div class="card-header">Shark Tank</div>`;
+    domString += `<div class="card-header">SharkTank</div>`;
     domString += '<ul class="list-group list-group-flush">';
+
     persons.forEach((person) => {
         domString += `<li class="list-group-item">${person.name}</li>`;
     })
+
     domString += '</ul>';
     domString += '</div>';
 
